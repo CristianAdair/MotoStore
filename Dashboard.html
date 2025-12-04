@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard Yamaha</title>
+<link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+<header>
+  <div class="container header-inner">
+    <h1 class="brand">Dashboard Yamaha</h1>
+
+    <nav>
+      <ul class="nav">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="About.html">Acerca</a></li>
+        <li><a href="gallery.html">Motos</a></li>
+        <li><a href="dashboard.html" class="active">Dashboard</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="stats">
+    <div class="stat-card">
+      <h3>Total de Modelos</h3>
+      <p id="statTotal">0</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>Último Modelo</h3>
+      <p id="statLast">—</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>Modo Oscuro</h3>
+      <button class="btn" onclick="toggleDarkMode()">Cambiar</button>
+    </div>
+  </section>
+
+  <section>
+    <h2>Agregar Modelo Nuevo</h2>
+
+    <form id="addForm" class="card form-card">
+      <label>Modelo *</label>
+      <input id="title" required minlength="2">
+
+      <label>Descripción</label>
+      <textarea id="desc"></textarea>
+
+      <button class="btn">Agregar</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>Lista de Motos</h2>
+    <ul id="entryList" class="entry-list"></ul>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <p>© 2025 - MotoStore Yamaha</p>
+  </div>
+</footer>
+<script>
+function toggleDarkMode() {
+  console.log("FUNCIONA");
+  document.body.classList.toggle("dark");
+}
+</script>
+
+
+<script src="js/dashboard.js"></script>
+</body>
+</html>
+
+
+

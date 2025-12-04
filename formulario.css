@@ -1,0 +1,17 @@
+.contact-section {
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.contact-section input,
+.contact-section textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#formMsg {
+    margin-top: 10px;
+    font-weight: bold;
+}

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contacto Yamaha</title>
+<link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+<header>
+  <div class="container header-inner">
+    <h1 class="brand">Contacto MotoStore</h1>
+
+    <nav>
+      <ul class="nav">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="About.html">Acerca</a></li>
+        <li><a href="gallery.html">Motos</a></li>   
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="contact.html" class="active">Contacto</a></li>
+        
+        
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  
+  <section class="contact-section">
+    <h2>Contáctanos</h2>
+
+    <form id="contactForm">
+        <label>Nombre:</label>
+        <input type="text" id="nombre">
+
+        <label>Correo:</label>
+        <input type="email" id="correo">
+
+        <label>Mensaje:</label>
+        <textarea id="mensaje"></textarea>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <p id="formMsg"></p>
+</section>
+
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <p>© 2025 - MotoStore Yamaha</p>
+  </div>
+</footer>
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let nombre = document.getElementById("nombre").value.trim();
+    let correo = document.getElementById("correo").value.trim();
+    let mensaje = document.getElementById("mensaje").value.trim();
+    let msg = document.getElementById("formMsg");
+
+    if (nombre === "" || correo === "" || mensaje === "") {
+        msg.style.color = "red";
+        msg.textContent = "Todos los campos son obligatorios.";
+        return;
+    }
+
+    if (!correo.includes("@") || !correo.includes(".")) {
+        msg.style.color = "red";
+        msg.textContent = "El correo no es válido.";
+        return;
+    }
+
+    msg.style.color = "green";
+    msg.textContent = "Mensaje enviado correctamente.";
+
+    let li = document.createElement("li");
+    li.textContent = `Nombre: ${nombre} | Correo: ${correo} | Mensaje: ${mensaje}`;
+    document.getElementById("listaDatos").appendChild(li);
+
+    document.getElementById("contactForm").reset();
+});
+</script>
+</body>
+</html>
+
+</body>
+</html>
